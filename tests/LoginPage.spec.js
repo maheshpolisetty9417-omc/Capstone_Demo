@@ -14,7 +14,7 @@ test.describe('SmartERP Login Test', () => {
     await loginPage.openLoginPage();
     await loginPage.login(process.env.ENV_USERNAME, process.env.ENV_PASSWORD);
     await loginPage.getTitle();
-    console.log("Loggedin successfully and Dashboard page is loading...")
+    console.log("Loggedin successfully and Dashboard page is loading")
   });
 
 });

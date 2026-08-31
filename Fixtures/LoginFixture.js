@@ -2,8 +2,16 @@ import { test as base, expect } from "@playwright/test";
 import { LoginPage } from "../Pages/LoginPage.js";
 
 export const test = base.extend({
-    loginPage: async ({ page }, use) => {
-        await use(new LoginPage(page));
-    }
+
+  loginPage: async ({ page }, use) => {
+
+    const loginPage = new LoginPage(page);
+
+    await loginPage.openLoginPage();
+    
+
+    await use(loginPage);
+  }
+
 });
-export { expect };
+export{ expect };

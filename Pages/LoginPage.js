@@ -15,7 +15,7 @@ export class LoginPage extends BasePage {
   }
 
   async openLoginPage() {
-    await this.navigate('https://smarterp-wgaw.onrender.com/');
+    await this.navigate('https://smarterp-wgaw.onrender.com');
   }
 
   async login(user, pass) {

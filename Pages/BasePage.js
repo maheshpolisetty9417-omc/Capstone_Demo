@@ -22,8 +22,12 @@ export class BasePage {
     await locator.fill(text);
   }
 
-  
   async click(locator) {
     await locator.click();
   }
+  
+  async submit(locator) {
+    await locator.click();
+  }
+
 }
