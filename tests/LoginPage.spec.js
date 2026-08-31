@@ -12,7 +12,7 @@ test.describe('SmartERP Login Test', () => {
   test('Verify successful login with Admin creds', async ({ loginPage }) => {
     
     await loginPage.openLoginPage();
-    await loginPage.login(process.env.ENV_USERNAME, process.env.ENV_PASSWORD);
+    await loginPage.login(process.env.Env_USERNAME, process.env.Env_PASSWORD);
     await loginPage.getTitle();
     console.log("Loggedin successfully and Dashboard page is loading")
   });
