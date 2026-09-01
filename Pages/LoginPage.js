@@ -22,9 +22,11 @@ export class LoginPage extends BasePage {
     await this.enterUserName(this.username, user);
     await this.enterPassword(this.password, pass);
     await this.click(this.loginButton);
+    await this.page.waitForLoadState('domcontentloaded');
   }
 
   async getTitle(){
+    await this.page.waitForLoadState('domcontentloaded');
     await this.verifyTitle("SmartERP Dashboard");
     console.log("Page Title: "+ await this.page.title());
   }
