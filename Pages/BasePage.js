@@ -1,4 +1,5 @@
 import { expect } from '@playwright/test';
+import { takeScreenshot } from '../Helpers/helpers.js';
 
 export class BasePage {
   constructor(page) {
@@ -28,6 +29,10 @@ export class BasePage {
   
   async submit(locator) {
     await locator.click();
+  }
+  
+  async captureScreenshot(name = 'screenshot') {
+    return await takeScreenshot(this.page, name);
   }
 
 }
