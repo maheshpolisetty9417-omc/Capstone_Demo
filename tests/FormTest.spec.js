@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.resolve(__dirname, '../Env/.env'), override: true });
-const formData = readJsonData('C:\\Users\\mahesh.polisetty\\Playwright\\CapstoneProject_Demo\\Capstone_Demo\\test-data\\formData.json');
+const formData = readJsonData('../test-data/formData.json');
 
 test('Submit valid registration form', async ({ page }) => {
     const formPage = new FormPage(page);
@@ -21,6 +21,7 @@ test('Submit valid registration form', async ({ page }) => {
     await loginPage.getTitle();
 
     await formPage.openFormPage();
+    await formPage.getScreenShot('form-opened');
     await formPage.fillForm(formData);
     await formPage.submitForm();
     await formPage.getScreenShot('form-submission');
