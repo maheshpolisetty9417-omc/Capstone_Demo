@@ -30,7 +30,6 @@ export class FormPage extends BasePage {
     async fillForm(data) {
         await expect(this.FormTitle).toBeVisible();
         console.log("Form title is visible: ", await this.FormTitle.textContent());
-        await this.page.getScreenShot('form-Opened');
         await this.firstName.fill(data.firstName);
         await this.lastName.fill(data.lastName);
         await this.email.fill(data.email);
