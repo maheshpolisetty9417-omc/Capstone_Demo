@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.resolve(__dirname, '../Env/.env'), override: true });
-const formData = readJsonData('../test-data/formData.json');
+const formData = readJsonData(__dirname, '../test-data/formData.json');
 
 test('Submit valid registration form', async ({ page }) => {
     const formPage = new FormPage(page);
